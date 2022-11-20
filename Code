@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int
+main ()
+{
+
+  string userBack = "";
+  string userInput2 = "";
+  string userInput;
+  getline (cin, userInput);
+  int i = userInput.length();
+  int a = 0;
+  int b;
+
+  // create a string (userInput2) without the spaces
+  while (a < i)
+    {
+      char space = userInput.at (a);
+      if (space != ' ')
+	    {
+	        userInput2.push_back (space);
+	    }
+      a++;
+    }
+
+    b = userInput2.length();
+  while (b > 0)
+    {
+      char test = userInput2.at(b - 1);
+	  userBack.push_back(test);
+      b--;
+    }
+
+  if (userBack == userInput2)
+    {
+      cout << "palindrome: " << userInput << endl;
+    }
+    else {
+       cout << "not a palindrome: " << userInput << endl;
+}
+  return 0;
+
+
+
+}
